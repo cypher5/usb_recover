@@ -32,5 +32,9 @@ struct colours
     uint8_t blue;
 }__attribute__((__packed__)) ;
 
-
+int byte_offset(int width, size_t colours)
+{
+ int byte_offset =  (4 - (header2.width * colours) % 4) % 4;
+ return byte_offset;
+}
 
